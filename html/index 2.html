@@ -1,0 +1,30 @@
+<html>
+<head>
+
+</head>
+<body>
+<br>
+<br>
+<br>
+<br>
+<input type="text" id="nombre"/>
+<input type="button" value="Aceptar" onClick="mostrarNombre()"/>
+<input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
+<input type="button" value="Say hello iOS" />
+<br>
+<div id='buttons'></div> <div id='log'></div>
+<script type="text/javascript">
+    function mostrarNombre() {
+    	var txt_nombre = document.getElementById("nombre");
+        Android.showToast(txt_nombre.value);
+        window.webkit.messageHandlers.observe.postMessage(txt_nombre.value);
+    }
+
+    function showAndroidToast(toast) {
+        Android.showToast(toast);
+    }
+
+
+</script>
+</body>
+</html>
